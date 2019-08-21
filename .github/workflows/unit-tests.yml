@@ -1,0 +1,13 @@
+name: Unit tests
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: make
+    - name: Test path parser
+      run: build/test-path_parser
